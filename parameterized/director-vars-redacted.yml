@@ -1,0 +1,61 @@
+---
+opsman-configuration:
+  vcenter_comfig:
+    datacenter: ((vcenter_DataCenter))
+    datastore: ((vcenter_DataStore))
+    host: ((vcenter_host))
+    username: ((vcenter_username)) 
+    password: ((vcenter_password))
+    cluster_name: ((vcenter_cluster))
+    resource_pool_name:  ((vcenter_resource_pool))
+  director_config:
+    ntp_server ((ntp_server ))
+  az_config:
+    az_zone_1:
+      name: ((availability_zone_1_name))
+      cluster: ((availability_zone_1_cluster_name))
+      resource_pool: ((availability_zone_1_resource_pool_name))
+  network_config:
+    infra_network:
+      name: ((infra_network_name))
+      subnets:
+        subnet_1:
+        - iaas_identifier: ((infra_network_iaas_identifier))
+          cidr: ((infra_network_cidr))
+          reserved_ip_ranges: ((infra_network_reserved_range))
+          gateway: ((infra_network_gateway))
+          dns: ((infra_network_dns))
+          vm_network: ((infra_network_vm_network_name))
+          az_zones: ((infra_network_vm_az_zones))
+    apps_network:
+      name: ((apps_network_name))
+      subnets:
+        subnet_1:
+        - iaas_identifier: ((apps_network_iaas_identifier))
+          cidr: ((apps_network_cidr))
+          reserved_ip_ranges: ((apps_network_reserved_range))
+          gateway: ((apps_network_gateway))
+          dns: ((apps_network_dns))
+          vm_network: ((apps_network_vm_network_name))
+          az_zones: ((apps_network_vm_az_zones))
+    services_network:
+      name: ((services_network_name))
+      subnets:
+        subnet_1:
+        - iaas_identifier: ((services_network_iaas_identifier))
+          cidr: ((services_network_cidr))
+          reserved_ip_ranges: ((services_network_reserved_range))
+          gateway: ((services_network_gateway))
+          dns: ((services_network_dns))
+          vm_network: ((services_network_vm_network_name))
+          az_zones: ((services_network_vm_az_zones))
+  az_zone_and_network_assignment:
+    singleton_availability_zone:
+      name: ((availability_zone_1_name))
+    network:
+      name: ((infra_network_name))
+  Security:
+    trusted_certificates:
+      - ((trusted_certificate_1))
+  
+  

@@ -1,0 +1,140 @@
+az-configuration:
+- name: az-1
+  iaas_configuration_name: default
+  clusters:
+  - cluster: ((opsman-configuration.vcenter_config.cluster_name)) 
+    drs_rule: MUST
+    host_group: null
+    resource_pool: ((opsman-configuration.vcenter_config.resource_pool_name))
+iaas-configurations:
+- additional_cloud_properties: {}
+  bosh_disk_path: pcf_disk
+  bosh_template_folder: pcf_templates
+  bosh_vm_folder: pcf_vms
+  datacenter: ((opsman-configuration.vcenter_config.datacenter))
+  disk_type: thin
+  enable_human_readable_name: true
+  ensure_no_ip_conflicts: false
+  ephemeral_datastore_clusters_string: ""
+  ephemeral_datastores_string: ((opsman-configuration.vcenter_config.datastore))
+  name: default
+  nsx_networking_enabled: false
+  persistent_datastore_clusters_string: ""
+  persistent_datastores_string: ((opsman-configuration.vcenter_config.datastore))
+  ssl_verification_enabled: false
+  vcenter_host: ((opsman-configuration.vcenter_config.host))
+  vcenter_password: ((opsman-configuration.vcenter_config.password))
+  vcenter_username: ((opsman-configuration.vcenter.username))
+network-assignment:
+  network:
+    name: infra
+  other_availability_zones: []
+  singleton_availability_zone:
+    name: az-1
+networks-configuration:
+  icmp_checks_enabled: true
+  networks:
+  - name: ((network_config.infra_network.name))
+    subnets:
+    - iaas_identifier: ((network_config.infra_network.subnets.subnet_1.iaas_identifier))
+      cidr: ((network_config.infra_network.subnets.subnet_1.cidr))
+      dns: ((network_config.infra_network.subnets.subnet_1.dns)
+      gateway: ((network_config.infra_network.subnets.subnet_1.gateway))
+      reserved_ip_ranges: ((network_config.infra_network.subnets.subnet_1.reserved_ip_ranges))
+      availability_zone_names:
+      - ((network_config.infra_network.subnets.subnet_1.az_zones)) 
+  - name: ((network_config.apps_network.name))
+    subnets:
+    - iaas_identifier: ((network_config.apps_network.subnets.subnet_1.iaas_identifier))
+      cidr: ((network_config.apps_network.subnets.subnet_1.cidr))
+      dns: ((network_config.apps_network.subnets.subnet_1.dns)
+      gateway: ((network_config.apps_network.subnets.subnet_1.gateway))
+      reserved_ip_ranges: ((network_config.apps_network.subnets.subnet_1.reserved_ip_ranges))
+      availability_zone_names:
+      - ((network_config.apps_network.subnets.subnet_1.az_zones)) 
+  - name: ((network_config.services_network.name))
+    subnets:
+    - iaas_identifier: ((network_config.services_network.subnets.subnet_1.iaas_identifier))
+      cidr: ((network_config.services_network.subnets.subnet_1.cidr))
+      dns: ((network_config.services_network.subnets.subnet_1.dns)
+      gateway: ((network_config.services_network.subnets.subnet_1.gateway))
+      reserved_ip_ranges: ((network_config.services_network.subnets.subnet_1.reserved_ip_ranges))
+      availability_zone_names:
+      - ((network_config.services_network.subnets.subnet_1.az_zones)) 
+properties-configuration:
+  director_configuration:
+    additional_ssh_users: []
+    automatic_certificate_rotation_enabled: false
+    blobstore_type: local
+    bosh_director_recreate_on_next_deploy: false
+    bosh_log_level: none
+    bosh_recreate_on_next_deploy: false
+    bosh_recreate_persistent_disks_on_next_deploy: false
+    ca_certificate_duration: 1460
+    database_type: internal
+    director_metrics_server_enabled: true
+    director_worker_count: 5
+    duration_overrides_enabled: false
+    encryption:
+      keys: []
+      providers: []
+    hm_emailer_options:
+      enabled: false
+    hm_pager_duty_options:
+      enabled: false
+    identification_tags: {}
+    job_configuration_on_tmpfs: false
+    keep_unreachable_vms: false
+    leaf_certificate_duration: 730
+    local_blobstore_options:
+      enable_signed_urls: true
+    ntp_servers_string: time.nist.gov
+    post_deploy_enabled: false
+    resurrector_enabled: false
+    retry_bosh_deploys: false
+    short_lived_nats_bootstrap_credentials_enabled: false
+    skip_director_drain: false
+    system_metrics_runtime_enabled: true
+  dns_configuration:
+    excluded_recursors: []
+    handlers: []
+  security_configuration:
+    clear_default_trusted_certificates_store: true
+    generate_vm_passwords: true
+    opsmanager_root_ca_trusted_certs: true
+    trusted_certificates: |
+      ((security.trusted_certificate_[0])
+  syslog_configuration:
+    enabled: false
+resource-configuration:
+  compilation:
+    additional_networks: []
+    additional_vm_extensions: []
+    avi:
+      pools: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+    swap_as_percent_of_memory_size: automatic
+  director:
+    additional_networks: []
+    additional_vm_extensions: []
+    avi:
+      pools: []
+    instance_type:
+      id: xlarge.disk
+    instances: automatic
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+    persistent_disk:
+      name: "76800"
+      size_mb: "76800"
+    swap_as_percent_of_memory_size: automatic
+vmextensions-configuration: []
+vmtypes-configuration: {}
