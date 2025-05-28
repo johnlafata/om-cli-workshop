@@ -1,3 +1,4 @@
+.DS_Store
 sandbox-backup/*
 sandbox/director-vars.yml
 sandbox/cf-vars.yml
