@@ -1,0 +1,164 @@
+az-configuration:
+- name: az-1
+  iaas_configuration_name: default
+  clusters:
+  - cluster:((opsman-configuration.vsphere.vcenter.clustername)) 
+    drs_rule: MUST
+    guid: d1d97c6733d1f9d151c7
+    host_group: null
+    resource_pool: ((opsman-configuration.vsphere.vcenter.resource_pool_name))
+  guid: a37ec4d79d0aa05912f3
+iaas-configurations:
+- additional_cloud_properties: {}
+  bosh_disk_path: pcf_disk
+  bosh_template_folder: pcf_templates
+  bosh_vm_folder: pcf_vms
+  datacenter: ((opsman-configuration.vsphere.vcenter.datacenter))
+  disk_type: thin
+  enable_human_readable_name: true
+  ensure_no_ip_conflicts: false
+  ephemeral_datastore_clusters_string: ""
+  ephemeral_datastores_string: ((opsman-configuration.vsphere.vcenter.datastore))
+  name: default
+  nsx_networking_enabled: false
+  persistent_datastore_clusters_string: ""
+  persistent_datastores_string: ((opsman-configuration.vsphere.vcenter.datastore)) 
+  ssl_verification_enabled: false
+  vcenter_host: ((opsman-configuration.vsphere.vcenter.url))
+  vcenter_password: ((opsman-configuration.vsphere.vcenter.password))
+  vcenter_username: ((opsman-configuration.vsphere.vcenter.username))
+network-assignment:
+  network:
+    name: infra
+  other_availability_zones: []
+  singleton_availability_zone:
+    name: az-1
+networks-configuration:
+  icmp_checks_enabled: true
+  networks:
+  - name: infra
+    subnets:
+    - iaas_identifier: VM Network
+      cidr: 192.168.86.0/24
+      dns: 75.75.75.75,8.8.8.8
+      gateway: 192.168.86.1
+      reserved_ip_ranges: 192.168.86.1-192.168.86.64,192.168.86.84-192.168.86.255
+      availability_zone_names:
+      - az-1
+  - name: apps
+    subnets:
+    - iaas_identifier: VM Network
+      cidr: 192.168.86.0/24
+      dns: 75.75.75.75,8.8.8.8
+      gateway: 192.168.86.1
+      reserved_ip_ranges: 192.168.86.1-192.168.86.84,192.168.86.151-192.168.86.255
+      availability_zone_names:
+      - az-1
+  - name: services
+    subnets:
+    - iaas_identifier: VM Network
+      cidr: 192.168.86.0/24
+      dns: 75.75.75.75,8.8.8.8
+      gateway: 192.168.86.1
+      reserved_ip_ranges: 192.168.86.1-192.168.86.150,192.168.86.186-192.168.86.255
+      availability_zone_names:
+      - az-1
+properties-configuration:
+  director_configuration:
+    additional_ssh_users: []
+    automatic_certificate_rotation_enabled: false
+    blobstore_type: local
+    bosh_director_recreate_on_next_deploy: false
+    bosh_log_level: none
+    bosh_recreate_on_next_deploy: false
+    bosh_recreate_persistent_disks_on_next_deploy: false
+    ca_certificate_duration: 1460
+    database_type: internal
+    director_metrics_server_enabled: true
+    director_worker_count: 5
+    duration_overrides_enabled: false
+    encryption:
+      keys: []
+      providers: []
+    hm_emailer_options:
+      enabled: false
+    hm_pager_duty_options:
+      enabled: false
+    identification_tags: {}
+    job_configuration_on_tmpfs: false
+    keep_unreachable_vms: false
+    leaf_certificate_duration: 730
+    local_blobstore_options:
+      enable_signed_urls: true
+    ntp_servers_string: time.nist.gov
+    post_deploy_enabled: false
+    resurrector_enabled: false
+    retry_bosh_deploys: false
+    short_lived_nats_bootstrap_credentials_enabled: false
+    skip_director_drain: false
+    system_metrics_runtime_enabled: true
+  dns_configuration:
+    excluded_recursors: []
+    handlers: []
+  security_configuration:
+    clear_default_trusted_certificates_store: true
+    generate_vm_passwords: true
+    opsmanager_root_ca_trusted_certs: true
+    trusted_certificates: |
+      -----BEGIN CERTIFICATE-----
+      MIID6TCCAtGgAwIBAgIVAOogspWN8ok1NoQKDQ+9uVde9ADfMA0GCSqGSIb3DQEB
+      CwUAMB8xCzAJBgNVBAYTAlVTMRAwDgYDVQQKDAdQaXZvdGFsMB4XDTI1MDUwNDEy
+      MDQwNFoXDTI3MDUwNTEyMDQwNFowPDELMAkGA1UEBhMCVVMxEDAOBgNVBAoMB1Bp
+      dm90YWwxGzAZBgNVBAMMEiouYWdpLWV4cGxvcmVyLmNvbTCCASIwDQYJKoZIhvcN
+      AQEBBQADggEPADCCAQoCggEBAJ2ZWGATgIg8X2+B4Cn04dMPmKBWX+tB+lz1q0dB
+      3eFqW+BEkHexsc4OECITMIRzAYzGDXkSr+LAGXJbZ7PmXUxWJZ4rWEhegn5+Q4Xo
+      HFH0vYtO4ognbbk+xKMxeIm5r4rb52P8UtZzTFjSS/QDwlCgomr3ZXm9/uxnTXz6
+      kVnms/ParNwVpxohzhEhmliWF+u3U/1uAdfOTue3hCaKllLBeydWuYc1zAbPUjjH
+      4eLIgS1OCaU8KKiDqoTdwDVdU3A/PDGPQPDUcghp8VX68IYM87He62t9tVBkqCmW
+      pd/Xunqt9YeGac5YmTgSvxhFcx/QJ5vDZ+GcWHZH439ZptECAwEAAaOB/jCB+zAd
+      BgNVHQ4EFgQUao2eM0E62nx+L5xqR7TpT6rZtM0wHwYDVR0jBBgwFoAUIMowxaZ2
+      PuWI575wN1Vd98w7kQ4wHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMA4G
+      A1UdDwEB/wQEAwIFoDCBiQYDVR0RBIGBMH+CEiouYWdpLWV4cGxvcmVyLmNvbYIW
+      Ki5zeXMuYWdpLWV4cGxvcmVyLmNvbYIXKi5hcHBzLmFnaS1leHBsb3Jlci5jb22C
+      HCoubG9naW4uc3lzLmFnaS1leHBsb3Jlci5jb22CGioudWFhLnN5cy5hZ2ktZXhw
+      bG9yZXIuY29tMA0GCSqGSIb3DQEBCwUAA4IBAQBK6z9LYrdiRWw3j3RzALv3TI9i
+      BoDJjx0nghnG2DEXHa6UphK76INuQWw75T3JojV2NTGQq031L/G1x2dyeAfRYiG6
+      lKDM8gqvfSGeFrDqfI01yVkShdhvPx+rAmS73WCme7rQUPfQUmM4cTvvGjECBfUO
+      VrSIoFzH0gvxiH6cf8biLp+Vmt7eksZA167fszig2Ncijo9bt15/56IJCU+tRv6Z
+      O7I/5pDecnMzDGTHYtdK8gv2JFyVJ5an6Z9Kx9jdBoQD7J5x80S6ohXJdd79q0/o
+      9xsX9pFoVwoxu9pEloU6Ot0TBXaektuSMevE3XN/m0FrY2THceqStLcBBfmg
+      -----END CERTIFICATE-----
+  syslog_configuration:
+    enabled: false
+resource-configuration:
+  compilation:
+    additional_networks: []
+    additional_vm_extensions: []
+    avi:
+      pools: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+    swap_as_percent_of_memory_size: automatic
+  director:
+    additional_networks: []
+    additional_vm_extensions: []
+    avi:
+      pools: []
+    instance_type:
+      id: xlarge.disk
+    instances: automatic
+    nsxt:
+      lb:
+        server_pools: []
+      ns_groups: []
+    persistent_disk:
+      name: "76800"
+      size_mb: "76800"
+    swap_as_percent_of_memory_size: automatic
+vmextensions-configuration: []
+vmtypes-configuration: {}

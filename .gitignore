@@ -1,2 +1,5 @@
-cf-vars.yml
-om-vars.yml
+sandbox-backup/*
+sandbox/director-vars.yml
+sandbox/cf-vars.yml
+prod/director-vars.yml
+prod/cf-vars.yml

@@ -10,7 +10,7 @@
 
 ### set environment variables to point to the Ops Manager API
 ```
-export OM_ENV=~/om-cli-env.yml
+export OM_ENV=sandbox/om-cli-env.yml
 ```
 
 ### list installed components
@@ -19,11 +19,11 @@ om -k --env=$OM_ENV products
 ```
 ### retrieve and save director configuration in file 
 ```
-om -k --env=$OM_ENV staged-director-config >director-config.yml
+om -k --env=$OM_ENV staged-director-config >sandbox-backupi/director-config.yml
 ```
 ### retrieve and save Tanzu Platform CF configuration in file 
 ```
-om -k --e	nv=$OM_ENV staged-config -p cf >cf-config.yml
+om -k --env=$OM_ENV staged-config -p cf >sandbox-backup/cf-config.yml
 ```     
 
 ## stage product (uploaded tile)
@@ -33,7 +33,7 @@ om -k --env=$OM_ENV stage-product --product-name cf --product-version 10.0.5
 
 ## use previous configuration file for product
 ```
-om -k --env=$OM_ENV configure-product --config cf-config.yml
+om -k --env=$OM_ENV configure-product --config sandbox-backup/cf-config.yml
 ```
 
 ## apply changes 
