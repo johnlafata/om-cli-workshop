@@ -103,7 +103,7 @@ properties-configuration:
     generate_vm_passwords: true
     opsmanager_root_ca_trusted_certs: true
     trusted_certificates: |
-      ((opsman-configuration.security.trusted_certificates)
+      ((opsman-configuration.security.trusted_certificates))
   syslog_configuration:
     enabled: false
 resource-configuration:
