@@ -20,7 +20,7 @@ opsman-configuration:
       name: infra
       subnets:
         subnet_1:
-        - iaas_identifier: VM Network
+          iaas_identifier: VM Network
           cidr: 192.168.86.0/24
           reserved_ip_ranges: 192.168.86.1-192.168.86.64,192.168.86.84-192.168.86.255
           gateway: 192.168.86.1
@@ -30,7 +30,7 @@ opsman-configuration:
       name: apps
       subnets:
         subnet_1:
-        - iaas_identifier: VM Network
+          iaas_identifier: VM Network
           cidr: 192.168.86.0/24
           reserved_ip_ranges: 192.168.86.1-192.168.86.84,192.168.86.151-192.168.86.255
           gateway: 192.168.86.1
@@ -40,7 +40,7 @@ opsman-configuration:
       name: services
       subnets:
         subnet_1:
-        - iaas_identifier: services
+          iaas_identifier: services
           cidr: 192.168.86.0/24
           reserved_ip_ranges: 192.168.86.1-192.168.86.150,192.168.86.186-192.168.86.255
           gateway: 192.168.86.1
