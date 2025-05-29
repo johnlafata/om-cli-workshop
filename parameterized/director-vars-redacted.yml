@@ -9,7 +9,7 @@ opsman-configuration:
     cluster_name: ((vcenter_cluster))
     resource_pool_name:  ((vcenter_resource_pool))
   director_config:
-    ntp_server: ((ntp_server ))
+    ntp_server: ((ntp_server))
   az_config:
     az_zone_1:
       name: ((availability_zone_1_name))
