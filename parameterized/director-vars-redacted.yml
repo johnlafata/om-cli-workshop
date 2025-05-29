@@ -20,7 +20,7 @@ opsman-configuration:
       name: ((infra_network_name))
       subnets:
         subnet_1:
-        - iaas_identifier: ((infra_network_iaas_identifier))
+          iaas_identifier: ((infra_network_iaas_identifier))
           cidr: ((infra_network_cidr))
           reserved_ip_ranges: ((infra_network_reserved_range))
           gateway: ((infra_network_gateway))
@@ -30,7 +30,7 @@ opsman-configuration:
       name: ((apps_network_name))
       subnets:
         subnet_1:
-        - iaas_identifier: ((apps_network_iaas_identifier))
+          iaas_identifier: ((apps_network_iaas_identifier))
           cidr: ((apps_network_cidr))
           reserved_ip_ranges: ((apps_network_reserved_range))
           gateway: ((apps_network_gateway))
@@ -40,7 +40,7 @@ opsman-configuration:
       name: ((services_network_name))
       subnets:
         subnet_1:
-        - iaas_identifier: ((services_network_iaas_identifier))
+          iaas_identifier: ((services_network_iaas_identifier))
           cidr: ((services_network_cidr))
           reserved_ip_ranges: ((services_network_reserved_range))
           gateway: ((services_network_gateway))
