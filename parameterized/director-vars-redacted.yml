@@ -1,6 +1,6 @@
 ---
 opsman-configuration:
-  vcenter_comfig:
+  vcenter_config:
     datacenter: ((vcenter_DataCenter))
     datastore: ((vcenter_DataStore))
     host: ((vcenter_host))

@@ -24,7 +24,7 @@ iaas-configurations:
   ssl_verification_enabled: false
   vcenter_host: ((opsman-configuration.vcenter_config.host))
   vcenter_password: ((opsman-configuration.vcenter_config.password))
-  vcenter_username: ((opsman-configuration.vcenter.username))
+  vcenter_username: ((opsman-configuration.vcenter_config.username))
 network-assignment:
   network:
     name: infra
