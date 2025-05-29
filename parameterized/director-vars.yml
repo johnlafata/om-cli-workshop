@@ -1,7 +1,7 @@
 ---
 opsman-configuration:
   vcenter_config:
-    datacenter: DataCenter
+    datacenter: Datacenter
     datastore: datastore1
     host: 192.168.86.22
     username: Administrator@vsphere.local
