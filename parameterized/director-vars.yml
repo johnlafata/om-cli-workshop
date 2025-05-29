@@ -1,13 +1,13 @@
 ---
 opsman-configuration:
-  vcenter_comfig:
+  vcenter_config:
     datacenter: DataCenter
     datastore: datastore1
     host: opsmgr-prod.agi-explorer.com
     username: Administrator@vsphere.local
     password: ((vcenter_password))
     cluster_name: Cluster1
-    resource_pool_name:  TPCF
+    resource_pool_name: TPCF
   director_config:
     ntp_server time.nist.gov
   az_config:
