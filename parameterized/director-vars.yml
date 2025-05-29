@@ -9,7 +9,7 @@ opsman-configuration:
     cluster_name: Cluster1
     resource_pool_name: TPCF
   director_config:
-    ntp_server time.nist.gov
+    ntp_server: time.nist.gov
   az_config:
     az_zone_1:
       name: az-1
