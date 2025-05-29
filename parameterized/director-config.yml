@@ -34,33 +34,33 @@ network-assignment:
 networks-configuration:
   icmp_checks_enabled: true
   networks:
-  - name: ((configuration.network_config.infra_network.name))
+  - name: ((opsman-configuration.network_config.infra_network.name))
     subnets:
-    - iaas_identifier: ((configuration.network_config.infra_network.subnets.subnet_1.iaas_identifier))
-      cidr: ((configuration.network_config.infra_network.subnets.subnet_1.cidr))
-      dns: ((configuration.network_config.infra_network.subnets.subnet_1.dns)
-      gateway: ((configuration.network_config.infra_network.subnets.subnet_1.gateway))
-      reserved_ip_ranges: ((configuration.network_config.infra_network.subnets.subnet_1.reserved_ip_ranges))
+    - iaas_identifier: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.iaas_identifier))
+      cidr: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.cidr))
+      dns: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.dns)
+      gateway: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.gateway))
+      reserved_ip_ranges: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.reserved_ip_ranges))
       availability_zone_names:
-      - ((configuration.network_config.infra_network.subnets.subnet_1.az_zones)) 
-  - name: ((configuration.network_config.apps_network.name))
+      - ((opsman-configuration.network_config.infra_network.subnets.subnet_1.az_zones)) 
+  - name: ((opsman-configuration.network_config.apps_network.name))
     subnets:
-    - iaas_identifier: ((configuration.network_config.apps_network.subnets.subnet_1.iaas_identifier))
-      cidr: ((configuration.network_config.apps_network.subnets.subnet_1.cidr))
-      dns: ((configuration.network_config.apps_network.subnets.subnet_1.dns)
-      gateway: ((configuration.network_config.apps_network.subnets.subnet_1.gateway))
-      reserved_ip_ranges: ((configuration.network_config.apps_network.subnets.subnet_1.reserved_ip_ranges))
+    - iaas_identifier: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.iaas_identifier))
+      cidr: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.cidr))
+      dns: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.dns)
+      gateway: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.gateway))
+      reserved_ip_ranges: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.reserved_ip_ranges))
       availability_zone_names:
-      - ((configuration.network_config.apps_network.subnets.subnet_1.az_zones)) 
-  - name: ((configuration.network_config.services_network.name))
+      - ((opsman-configuration.network_config.apps_network.subnets.subnet_1.az_zones)) 
+  - name: ((opsman-configuration.network_config.services_network.name))
     subnets:
-    - iaas_identifier: ((configuration.network_config.services_network.subnets.subnet_1.iaas_identifier))
-      cidr: ((configuration.network_config.services_network.subnets.subnet_1.cidr))
-      dns: ((configuration.network_config.services_network.subnets.subnet_1.dns)
-      gateway: ((configuration.network_config.services_network.subnets.subnet_1.gateway))
-      reserved_ip_ranges: ((configuration.network_config.services_network.subnets.subnet_1.reserved_ip_ranges))
+    - iaas_identifier: ((opsman-configuration.network_config.services_network.subnets.subnet_1.iaas_identifier))
+      cidr: ((opsman-configuration.network_config.services_network.subnets.subnet_1.cidr))
+      dns: ((opsman-configuration.network_config.services_network.subnets.subnet_1.dns)
+      gateway: ((opsman-configuration.network_config.services_network.subnets.subnet_1.gateway))
+      reserved_ip_ranges: ((opsman-configuration.network_config.services_network.subnets.subnet_1.reserved_ip_ranges))
       availability_zone_names:
-      - ((configuration.network_config.services_network.subnets.subnet_1.az_zones)) 
+      - ((opsman-configuration.network_config.services_network.subnets.subnet_1.az_zones)) 
 properties-configuration:
   director_configuration:
     additional_ssh_users: []
@@ -103,7 +103,7 @@ properties-configuration:
     generate_vm_passwords: true
     opsmanager_root_ca_trusted_certs: true
     trusted_certificates: |
-      (( opsman-configuration.security.trusted_certificates[0])
+      ((opsman-configuration.security.trusted_certificates[0])
   syslog_configuration:
     enabled: false
 resource-configuration:
