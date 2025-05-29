@@ -34,33 +34,33 @@ network-assignment:
 networks-configuration:
   icmp_checks_enabled: true
   networks:
-  - name: ((network_config.infra_network.name))
+  - name: ((configuration.network_config.infra_network.name))
     subnets:
-    - iaas_identifier: ((network_config.infra_network.subnets.subnet_1.iaas_identifier))
-      cidr: ((network_config.infra_network.subnets.subnet_1.cidr))
-      dns: ((network_config.infra_network.subnets.subnet_1.dns)
-      gateway: ((network_config.infra_network.subnets.subnet_1.gateway))
-      reserved_ip_ranges: ((network_config.infra_network.subnets.subnet_1.reserved_ip_ranges))
+    - iaas_identifier: ((configuration.network_config.infra_network.subnets.subnet_1.iaas_identifier))
+      cidr: ((configuration.network_config.infra_network.subnets.subnet_1.cidr))
+      dns: ((configuration.network_config.infra_network.subnets.subnet_1.dns)
+      gateway: ((configuration.network_config.infra_network.subnets.subnet_1.gateway))
+      reserved_ip_ranges: ((configuration.network_config.infra_network.subnets.subnet_1.reserved_ip_ranges))
       availability_zone_names:
-      - ((network_config.infra_network.subnets.subnet_1.az_zones)) 
-  - name: ((network_config.apps_network.name))
+      - ((configuration.network_config.infra_network.subnets.subnet_1.az_zones)) 
+  - name: ((configuration.network_config.apps_network.name))
     subnets:
-    - iaas_identifier: ((network_config.apps_network.subnets.subnet_1.iaas_identifier))
-      cidr: ((network_config.apps_network.subnets.subnet_1.cidr))
-      dns: ((network_config.apps_network.subnets.subnet_1.dns)
-      gateway: ((network_config.apps_network.subnets.subnet_1.gateway))
-      reserved_ip_ranges: ((network_config.apps_network.subnets.subnet_1.reserved_ip_ranges))
+    - iaas_identifier: ((configuration.network_config.apps_network.subnets.subnet_1.iaas_identifier))
+      cidr: ((configuration.network_config.apps_network.subnets.subnet_1.cidr))
+      dns: ((configuration.network_config.apps_network.subnets.subnet_1.dns)
+      gateway: ((configuration.network_config.apps_network.subnets.subnet_1.gateway))
+      reserved_ip_ranges: ((configuration.network_config.apps_network.subnets.subnet_1.reserved_ip_ranges))
       availability_zone_names:
-      - ((network_config.apps_network.subnets.subnet_1.az_zones)) 
-  - name: ((network_config.services_network.name))
+      - ((configuration.network_config.apps_network.subnets.subnet_1.az_zones)) 
+  - name: ((configuration.network_config.services_network.name))
     subnets:
-    - iaas_identifier: ((network_config.services_network.subnets.subnet_1.iaas_identifier))
-      cidr: ((network_config.services_network.subnets.subnet_1.cidr))
-      dns: ((network_config.services_network.subnets.subnet_1.dns)
-      gateway: ((network_config.services_network.subnets.subnet_1.gateway))
-      reserved_ip_ranges: ((network_config.services_network.subnets.subnet_1.reserved_ip_ranges))
+    - iaas_identifier: ((configuration.network_config.services_network.subnets.subnet_1.iaas_identifier))
+      cidr: ((configuration.network_config.services_network.subnets.subnet_1.cidr))
+      dns: ((configuration.network_config.services_network.subnets.subnet_1.dns)
+      gateway: ((configuration.network_config.services_network.subnets.subnet_1.gateway))
+      reserved_ip_ranges: ((configuration.network_config.services_network.subnets.subnet_1.reserved_ip_ranges))
       availability_zone_names:
-      - ((network_config.services_network.subnets.subnet_1.az_zones)) 
+      - ((configuration.network_config.services_network.subnets.subnet_1.az_zones)) 
 properties-configuration:
   director_configuration:
     additional_ssh_users: []
@@ -103,7 +103,7 @@ properties-configuration:
     generate_vm_passwords: true
     opsmanager_root_ca_trusted_certs: true
     trusted_certificates: |
-      ((security.trusted_certificate_[0])
+      (( opsman-configuration.security.trusted_certificates[0])
   syslog_configuration:
     enabled: false
 resource-configuration:

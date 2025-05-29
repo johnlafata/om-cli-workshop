@@ -51,7 +51,7 @@ opsman-configuration:
       name: ((availability_zone_1_name))
     network:
       name: ((infra_network_name))
-  Security:
+  security:
     trusted_certificates:
       - ((trusted_certificate_1))
   
