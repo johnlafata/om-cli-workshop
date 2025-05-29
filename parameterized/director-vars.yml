@@ -3,7 +3,7 @@ opsman-configuration:
   vcenter_config:
     datacenter: DataCenter
     datastore: datastore1
-    host: opsmgr-prod.agi-explorer.com
+    host: 196.168.86.22
     username: Administrator@vsphere.local
     password: ((vcenter_password))
     cluster_name: Cluster1
