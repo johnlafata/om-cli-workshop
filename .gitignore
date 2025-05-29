@@ -1,6 +1,4 @@
 .DS_Store
 sandbox-backup/*
-sandbox/director-vars.yml
-sandbox/cf-vars.yml
-prod/director-vars.yml
-prod/cf-vars.yml
+sandbox-venter-password.txt
+prod-vcenter-password.txt

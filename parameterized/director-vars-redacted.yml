@@ -25,7 +25,6 @@ opsman-configuration:
           reserved_ip_ranges: ((infra_network_reserved_range))
           gateway: ((infra_network_gateway))
           dns: ((infra_network_dns))
-          vm_network: ((infra_network_vm_network_name))
           az_zones: ((infra_network_vm_az_zones))
     apps_network:
       name: ((apps_network_name))
@@ -36,7 +35,6 @@ opsman-configuration:
           reserved_ip_ranges: ((apps_network_reserved_range))
           gateway: ((apps_network_gateway))
           dns: ((apps_network_dns))
-          vm_network: ((apps_network_vm_network_name))
           az_zones: ((apps_network_vm_az_zones))
     services_network:
       name: ((services_network_name))
@@ -47,7 +45,6 @@ opsman-configuration:
           reserved_ip_ranges: ((services_network_reserved_range))
           gateway: ((services_network_gateway))
           dns: ((services_network_dns))
-          vm_network: ((services_network_vm_network_name))
           az_zones: ((services_network_vm_az_zones))
   az_zone_and_network_assignment:
     singleton_availability_zone:
