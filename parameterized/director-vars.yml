@@ -51,8 +51,6 @@ opsman-configuration:
       name: az-1
     network:
       name: infra
-  security:
-    trusted_certificates: 
 
   
   
