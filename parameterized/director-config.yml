@@ -38,7 +38,7 @@ networks-configuration:
     subnets:
     - iaas_identifier: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.iaas_identifier))
       cidr: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.cidr))
-      dns: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.dns)
+      dns: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.dns))
       gateway: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.gateway))
       reserved_ip_ranges: ((opsman-configuration.network_config.infra_network.subnets.subnet_1.reserved_ip_ranges))
       availability_zone_names:
@@ -47,7 +47,7 @@ networks-configuration:
     subnets:
     - iaas_identifier: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.iaas_identifier))
       cidr: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.cidr))
-      dns: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.dns)
+      dns: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.dns))
       gateway: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.gateway))
       reserved_ip_ranges: ((opsman-configuration.network_config.apps_network.subnets.subnet_1.reserved_ip_ranges))
       availability_zone_names:
@@ -56,7 +56,7 @@ networks-configuration:
     subnets:
     - iaas_identifier: ((opsman-configuration.network_config.services_network.subnets.subnet_1.iaas_identifier))
       cidr: ((opsman-configuration.network_config.services_network.subnets.subnet_1.cidr))
-      dns: ((opsman-configuration.network_config.services_network.subnets.subnet_1.dns)
+      dns: ((opsman-configuration.network_config.services_network.subnets.subnet_1.dns))
       gateway: ((opsman-configuration.network_config.services_network.subnets.subnet_1.gateway))
       reserved_ip_ranges: ((opsman-configuration.network_config.services_network.subnets.subnet_1.reserved_ip_ranges))
       availability_zone_names:
@@ -88,7 +88,7 @@ properties-configuration:
     leaf_certificate_duration: 730
     local_blobstore_options:
       enable_signed_urls: true
-    ntp_servers_string: time.nist.gov
+    ntp_servers_string: ((opsman-configuration.director_config.ntp_server))
     post_deploy_enabled: false
     resurrector_enabled: false
     retry_bosh_deploys: false
