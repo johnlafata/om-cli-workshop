@@ -1,4 +1,5 @@
 .DS_Store
 sandbox-backup/*
-sandbox-venter-password.txt
-prod-vcenter-password.txt
+scratch/*
+jumphost-scripts/sandbox-venter-password.txt
+jumphost-scripts/prod_vcenter_password.txt
