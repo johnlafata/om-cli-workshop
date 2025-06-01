@@ -2,4 +2,4 @@
 sandbox-backup/*
 scratch/*
 jumphost-scripts/sandbox-venter-password.txt
-jumphost-scripts/prod_vcenter_password.txt
+jumphost-scripts/new_vcenter_password.txt
